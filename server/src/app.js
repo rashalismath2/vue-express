@@ -2,6 +2,9 @@ const express=require('express');
 const bodyParser=require('body-parser');
 const morgan=require('morgan');
 const cors=require('cors');
+const sequelize=require('./models/index');
+const config=require('./config/config');
+const routes=require('./routes/route');
 
 
 const app=express();
@@ -9,18 +12,10 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.post('/register',(req,res)=>{
-    res.send({
-        Message:req.body.email
-    });
-})
+routes(app);
 
-app.get('/status',(req,res)=>{
-    res.send({
-        Message:'Hello world'
+sequelize.then(()=>{
+        app.listen(config.port,()=>{
+            console.log('Server started on port 8585');
+        });
     })
-});
-
-app.listen(process.env.PORT || 8585,()=>{
-    console.log('Server started on port 8585');
-});
