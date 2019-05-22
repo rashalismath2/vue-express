@@ -10,6 +10,6 @@ const sequelize=new Sequelize(
     );
 
 //User model
-User(sequelize);
+module.exports.user=User(sequelize);
 
-module.exports=sequelize.sync();
+module.exports.sync=sequelize.sync();

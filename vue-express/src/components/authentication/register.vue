@@ -17,7 +17,7 @@
        },
        methods: {
            register(){
-               console.log(this.email);
+            //    console.log(this.email);
               this.$http.post('http://localhost:8585/register',{
                 email:this.email,
                 password:this.password
