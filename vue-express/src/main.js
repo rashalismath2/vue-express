@@ -6,6 +6,9 @@ import vueResource from 'vue-resource';
 
 Vue.config.productionTip = false
 
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 Vue.use(vueResource);
 Vue.use(VueRouter);
 const router=new VueRouter({

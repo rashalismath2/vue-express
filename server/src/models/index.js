@@ -12,4 +12,4 @@ const sequelize=new Sequelize(
 //User model
 module.exports.user=User(sequelize);
 
-module.exports.sync=sequelize.sync();
+module.exports.sync=sequelize.sync({force:true});

@@ -1,5 +1,5 @@
 <template>
-   <div id="register" class='container mt-5'>
+   <div id="login" class='container mt-5'>
         <form class="">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
@@ -14,7 +14,7 @@
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
-            <button  v-on:click="register" type="submit" class="btn btn-primary">Submit</button>
+            <button  v-on:click="login" type="submit" class="btn btn-primary">Submit</button>
         </form>
    </div>
 </template>
@@ -29,11 +29,11 @@
            }
        },
        methods: {
-           register(e){
+           login(e){
                e.preventDefault();
                
             //    console.log(this.email);
-              this.$http.post('http://localhost:8585/register',{
+              this.$http.post('http://localhost:8585/login',{
                 email:this.email,
                 password:this.password
             }).then((message)=>{
@@ -47,7 +47,7 @@
 </script>
 
 <style scoped>
-    #register{
+    #login{
         
     }
 </style>
